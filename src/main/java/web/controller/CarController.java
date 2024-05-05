@@ -19,7 +19,7 @@ public class CarController {
 
     @GetMapping()
     public String printCars(ModelMap model) {
-        model.addAttribute("car", carService.listCars());
+        model.addAttribute("cars", carService.listCars());
         return "cars";
     }
 }
