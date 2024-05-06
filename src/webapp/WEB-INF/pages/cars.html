@@ -6,13 +6,23 @@
     <title>Машинки</title>
 </head>
 <body>
-<div>
-    <th:block th:each="car,iter : ${cars}" th:class="${iter.count}? ${cnt}">
-        <h2 th:text="'Модель автомобиля: '+ ${car.getModel()}"></h2>
-        <h3 th:text="'Год выпуска: '+ ${car.getYear()}"></h3>
-        <h4 th:text="'ID автомобиля: '+ ${car.getId()}"></h4>
-        </br>
-    </th:block>
-</div>
+<table border="6">
+    <thead>
+    <tr>
+        <th>Модель</th>
+        <th>Год выпуска</th>
+        <th>ID</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car : ${cars}">
+        <td th:text="${car.getModel()}">Модель</td>
+        <td th:text="${car.getYear()}">Год выпуска</td>
+        <td th:text="${car.getId()}">ID</td>
+    </tr>
+    </tbody>
+</table>
+
 </body>
 </html>
